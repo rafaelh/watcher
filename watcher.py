@@ -1,9 +1,6 @@
-""" A simple RSS feed watcher """
+""" A simple website feed watcher """
 
 import sqlite3
-import smtplib
-from email.mime.text import MIMEText
-
 import feedparser
 
 DATABASE = '/var/tmp/watcher_rss.sqlite'
@@ -39,7 +36,7 @@ def add_article_to_db(article_title, article_date):
 
 def send_notification(article_title, article_url):
 
-    print("Hi there is a new website article:" + article_title + ".\n You can read it here " + article_url)
+    print("Hi there is a new website article:" + article_title + ". You can read it here " + article_url)
 
 def read_article_feed():
     """ Get articles from RSS feed """
